@@ -1,8 +1,10 @@
 AddCSLuaFile()
 if SERVER then return end
 
-local drawClumpSpread = weapons.Get( "cw_extrema_ratio_official" ).drawClumpSpread
-local stored = weapons.GetStored( "cw_extrema_ratio_official" )
+local className = "cw_extrema_ratio_official"
+
+local drawClumpSpread = weapons.Get( className ).drawClumpSpread
+local stored = weapons.GetStored( className )
 
 stored.drawClumpSpread = function( self, ... )
     if not self.hudScaler then

@@ -22,3 +22,5 @@ All scripts should follow these rules:
  - Have an `init.lua` at the root of their directory
  - Have a section in this README under the [Included Scripts](#included-scripts) category
  - Ideally, have a convar to enable/disable them
+
+All scripts are loaded on `InitPostEntity`.
