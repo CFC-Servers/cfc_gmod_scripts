@@ -10,6 +10,11 @@ Fixes the on-tick `hudScaler` error spam.
 
 
 # Development
+**Halt!**
+Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
+Loose-knit script repos like this are in danger of turning into a unmaintainable dumping ground. Please do your best to keep it clean and reasonable.
+
+
 ⚠️ The project structure and these rules are subject to change as we add more scripts.
 
 All scripts should follow these rules:
