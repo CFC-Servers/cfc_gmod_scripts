@@ -8,6 +8,11 @@ A disgusting pile of loose-knit, à la carte scripts for Garry's Mod
 ### Description
 Fixes the on-tick `hudScaler` error spam.
 
+## `swep-remover`
+
+### Description
+Prevents configured weapon classes to be prevented from loading, such as abusive admin weapons.
+
 
 # Development
 **Halt!**
@@ -22,5 +27,3 @@ All scripts should follow these rules:
  - Have an `init.lua` at the root of their directory
  - Have a section in this README under the [Included Scripts](#included-scripts) category
  - Ideally, have a convar to enable/disable them
-
-All scripts are loaded on `InitPostEntity`.
