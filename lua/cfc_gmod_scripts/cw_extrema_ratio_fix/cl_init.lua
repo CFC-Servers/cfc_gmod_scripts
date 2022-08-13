@@ -1,10 +1,9 @@
-AddCSLuaFile()
-if SERVER then return end
-
 local className = "cw_extrema_ratio_official"
 
 hook.Add( "InitPostEntity", "CFC_GmodScripts_Load", function()
-    local drawClumpSpread = weapons.Get( className ).drawClumpSpread
+    local weapon = weapons.Get( className )
+    if not weapon then return end
+    local drawClumpSpread = weapon.drawClumpSpread
     local stored = weapons.GetStored( className )
 
     stored.drawClumpSpread = function( self, ... )
