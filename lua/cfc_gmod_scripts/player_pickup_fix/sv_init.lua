@@ -17,13 +17,6 @@ local function validatePlayerPickup( e )
         e:Remove()
         return
     end
-
-    -- If this player_pickup isn't holding what its owner is Use-holding, it's invalid
-    local ownerHolding = owner:GetEntityInUse()
-    if ownerHolding ~= movePeer then
-        e:Remove()
-        return
-    end
 end
 
 hook.Add( "OnEntityCreated", "test", function( e )
