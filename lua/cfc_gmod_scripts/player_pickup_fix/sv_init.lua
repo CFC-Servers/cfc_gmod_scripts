@@ -19,7 +19,7 @@ local function validatePlayerPickup( e )
     end
 end
 
-hook.Add( "OnEntityCreated", "test", function( e )
+hook.Add( "OnEntityCreated", "CFC_GmodScripts_PlayerPickupFix", function( e )
     if e:GetClass() ~= "player_pickup" then return end
     timer.Simple( 0, function() validatePlayerPickup( e ) end )
 end )

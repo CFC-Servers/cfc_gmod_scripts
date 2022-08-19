@@ -7,13 +7,14 @@ local function log( name )
 end
 
 local function realmInclude( prefix, path )
-    if prefix == "sv_" and SERVER then
+    if prefix == "sv_" then
+        if CLIENT then return end
         return include( path )
     end
 
-    if prefix == "cl_" and CLIENT then
-        AddCSLuaFile( path )
-        return include( path )
+    if prefix == "cl_" then
+        if SERVER then return AddCSLuaFile( path ) end
+        if CLIENT then return include( path ) end
     end
 
     -- sh_ and default is shared
@@ -25,10 +26,12 @@ local _, dirs = file.Find( topLevel .. "/*", "LUA" )
 
 for _, dir in ipairs( dirs ) do
     log( dir )
+
     local files = file.Find( topLevel .. "/" .. dir .. "/*", "LUA" )
     for _, fil in ipairs( files ) do
         local prefix = string.sub( fil, 1, 3 )
         local path = dir .. "/" .. fil
-        realmInclude( prefix, path )
+
+        ProtectedCall( function() realmInclude( prefix, path ) end )
     end
 end
