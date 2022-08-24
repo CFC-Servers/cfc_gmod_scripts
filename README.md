@@ -1,18 +1,31 @@
 # cfc_gmod_scripts
 A disgusting pile of loose-knit, à la carte scripts for Garry's Mod
 
-# Included Scripts
+# Included Scripts:
+
+## `bigchat_restrictor`
+
+Uses the hooks provided by **[BigChat](https://github.com/CFC-Servers/gm_bigchat/)** to restrict it from certain ranks.
 
 ## `cw_extrema_ratio_fix`
 
 ### Description
 Fixes the on-tick `hudScaler` error spam.
 
-## `swep-remover`
+## `swep_remover`
 
 ### Description
 Prevents configured weapon classes to be prevented from loading, such as abusive admin weapons.
 
+## `player_pickup_fix`
+
+### Description
+Fixes a weird Garry's Mod exploit that happens if a player issues an absurd amount of `Use` commands on a single entity.
+
+## `l4d2_vehicles_fix`
+
+### Description
+Fixes a silly (but absurdly spammy) `nil` error that occurrs in a popular L4D2 SimfPhys Vehicle Pack (this fix has already been proposed upstream, but the author doesn't appear to want to implement it)
 
 # Development
 **Halt!**
