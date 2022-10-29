@@ -4,9 +4,11 @@ local netToRemove = {
     "pac3_test_sutie_backdoor"
 }
 
-for _, name in ipairs( netToRemove ) do
-    if net.Receivers[name] then
-        print( "[CFC Gmod Scripts] Removing net receiver for " .. name )
-        net.Receivers[name] = nil
+hook.Add( "InitPostEntity", "GMS_RemoveBadNetReceivers", function()
+    for _, name in ipairs( netToRemove ) do
+        if net.Receivers[name] then
+            print( "[CFC Gmod Scripts] Removing net receiver for " .. name )
+            net.Receivers[name] = nil
+        end
     end
-end
+end )
