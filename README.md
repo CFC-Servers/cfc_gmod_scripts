@@ -35,7 +35,7 @@ Removes certain net messages that are never used or useless for our usecase.
 ## `boreas_cleaner`
 
 ### Description
-Removes a variety of entity types at startup that lag players on gm_boreas.
+Removes a variety of entity types at startup that lag players on `gm_boreas`.
 
 # Development
 **Halt!**
