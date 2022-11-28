@@ -2,26 +2,21 @@ AddCSLuaFile()
 
 local topLevel = "cfc_gmod_scripts"
 local utils = require( "sh_utils.lua" )
-
 local log = utils.log
-
-local function runScript( path )
-    return include( path )( utils )
-end
 
 local function realmInclude( prefix, path )
     if prefix == "sv_" and SERVER then
-        return runScript( path )
+        return include( path )
     end
 
     if prefix == "cl_" and CLIENT then
         AddCSLuaFile( path )
-        return runScript( path )
+        return include( path )
     end
 
     -- sh_ and default is shared
     AddCSLuaFile( path )
-    return runScript( path )
+    return include( path )
 end
 
 local _, dirs = file.Find( topLevel .. "/*", "LUA" )
