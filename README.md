@@ -11,13 +11,6 @@ Uses the hooks provided by **[BigChat](https://github.com/CFC-Servers/gm_bigchat
  - https://github.com/CFC-Servers/gm_bigchat
 
 
-## `boreas_cleaner`
-#### Description
-Removes a variety of entity types at startup that lag players on `gm_boreas`.
-#### References
- - https://steamcommunity.com/sharedfiles/filedetails/?id=1572373847
-
-
 ## `cw_extrema_ratio_fix`
 #### Description
 Fixes the on-tick `hudScaler` error spam.

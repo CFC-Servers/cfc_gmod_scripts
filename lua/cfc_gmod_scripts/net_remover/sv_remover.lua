@@ -9,9 +9,7 @@ local netToRemove = {
 
 local function enable()
     for _, name in ipairs( netToRemove ) do
-        local receiver = net.Receivers[name]
-
-        if net.Receivers[name] then
+        if receiver then
             originals[name] = originals[name] or receiver
             net.Receivers[name] = nil
         end
