@@ -32,6 +32,11 @@ Fixes a silly (but absurdly spammy) `nil` error that occurrs in a popular L4D2 S
 ### Description
 Removes certain net messages that are never used or useless for our usecase.
 
+## `lfs_advert`
+
+### Description
+Removes the annoying LFS spawn in message
+
 # Development
 **Halt!**
 Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
