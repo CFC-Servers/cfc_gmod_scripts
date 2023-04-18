@@ -6,19 +6,12 @@ local function log( name )
     print( "[CFC Gmod Scripts] Loading: ", name )
 end
 
+-- ChatGPT says this is the best way to do this
 local function realmInclude( prefix, path )
-    if prefix == "sv_" and SERVER then
-        return include( path )
-    end
+    local is_cl, is_sv = prefix == "cl_", prefix == "sv_"
 
-    if prefix == "cl_" and CLIENT then
-        AddCSLuaFile( path )
-        return include( path )
-    end
-
-    -- sh_ and default is shared
-    AddCSLuaFile( path )
-    return include( path )
+    if is_cl or not is_sv then AddCSLuaFile( path ) end
+    if is_sv == SERVER or is_cl then return include( path ) end
 end
 
 local _, dirs = file.Find( topLevel .. "/*", "LUA" )
@@ -26,9 +19,11 @@ local _, dirs = file.Find( topLevel .. "/*", "LUA" )
 for _, dir in ipairs( dirs ) do
     log( dir )
     local files = file.Find( topLevel .. "/" .. dir .. "/*", "LUA" )
+
     for _, fil in ipairs( files ) do
         local prefix = string.sub( fil, 1, 3 )
         local path = dir .. "/" .. fil
+
         realmInclude( prefix, path )
     end
 end
