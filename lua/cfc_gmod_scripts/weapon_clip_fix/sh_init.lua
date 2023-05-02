@@ -1,4 +1,4 @@
-hook.Add( "CanTool", "CFC_GmodScripts_WeaponClipFix", function( ply, tr, toolName )
+hook.Add( "CanTool", "CFC_GmodScripts_WeaponClipFix", function( _, tr, toolName )
     if toolName ~= "proper_clipping" then return end
     if not tr.Hit then return end
 
