@@ -32,6 +32,11 @@ Fixes a silly (but absurdly spammy) `nil` error that occurrs in a popular L4D2 S
 ### Description
 Removes certain net messages that are never used or useless for our usecase.
 
+## `disablebloom`
+
+### Description
+Disables annoying bloom for maps that use bloom.
+
 ## `lfs_advert`
 
 ### Description
