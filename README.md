@@ -42,6 +42,13 @@ Disables annoying bloom for maps that use bloom.
 ### Description
 Removes the annoying LFS spawn in message
 
+## `spherical`
+
+### Description
+Fixes instant server crashes when trying to init a spherical physics object on an entity that has custom collisions enabled.
+
+_[ref](https://github.com/Facepunch/garrysmod-issues/issues/5535)_
+
 # Development
 **Halt!**
 Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
