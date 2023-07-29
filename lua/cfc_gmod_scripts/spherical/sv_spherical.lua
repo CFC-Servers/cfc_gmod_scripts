@@ -11,9 +11,9 @@ function EntityMeta:PhysicsInitSphere( ... )
     if hasCustomCollisions( self ) then
         print( "[CFC_GmodScripts] [WARN] Attempted to call PhysicsInitSphere on an entity with custom collisions. Ignoring." )
         self:EmitSound( "buttons/button10.wav" )
-        return
+        return false
     end
 
-    self:_GMS_PhysicsInitSphere( ... )
+    return self:_GMS_PhysicsInitSphere( ... )
 end
 
