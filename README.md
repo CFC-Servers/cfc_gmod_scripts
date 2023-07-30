@@ -12,35 +12,49 @@ Uses the hooks provided by **[BigChat](https://github.com/CFC-Servers/gm_bigchat
 ### Description
 Fixes the on-tick `hudScaler` error spam.
 
+---
+
 ## `swep_remover`
 
 ### Description
 Prevents configured weapon classes to be prevented from loading, such as abusive admin weapons.
+
+---
 
 ## `player_pickup_fix`
 
 ### Description
 Fixes a weird Garry's Mod exploit that happens if a player issues an absurd amount of `Use` commands on a single entity.
 
+---
+
 ## `l4d2_vehicles_fix`
 
 ### Description
 Fixes a silly (but absurdly spammy) `nil` error that occurrs in a popular L4D2 SimfPhys Vehicle Pack (this fix has already been proposed upstream, but the author doesn't appear to want to implement it)
+
+---
 
 ## `net_remover`
 
 ### Description
 Removes certain net messages that are never used or useless for our usecase.
 
+---
+
 ## `disablebloom`
 
 ### Description
 Disables annoying bloom for maps that use bloom.
 
+---
+
 ## `lfs_advert`
 
 ### Description
 Removes the annoying LFS spawn in message
+
+---
 
 ## `spherical`
 
@@ -48,6 +62,13 @@ Removes the annoying LFS spawn in message
 Fixes instant server crashes when trying to init a spherical physics object on an entity that has custom collisions enabled.
 
 _[ref](https://github.com/Facepunch/garrysmod-issues/issues/5535)_
+
+---
+
+## `phys_torque_fix`
+
+### Description
+Players can use `phys_torque`-derived constraints to instantly crash the server. This fix will stop the crashes with no side effects _(probably)_.
 
 # Development
 **Halt!**
