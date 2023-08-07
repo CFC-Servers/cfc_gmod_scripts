@@ -59,22 +59,6 @@ Removes the annoying LFS spawn in message
 
 <br>
 
-## `spherical`
-
-### Description
-Fixes instant server crashes when trying to init a spherical physics object on an entity that has custom collisions enabled.
-
-_[ref](https://github.com/Facepunch/garrysmod-issues/issues/5535)_
-
-<br>
-
-## `phys_torque_fix`
-
-### Description
-Players can use `phys_torque`-derived constraints to instantly crash the server. This fix will stop the crashes with no side effects _(probably)_.
-
-<br>
-
 # Development
 **Halt!**
 Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
