@@ -2,16 +2,15 @@ local connections = {}
 local banDuration = 3
 
 hook.Add( "CheckPassword", "GMS_AntiJoinSpam", function( steamid64, ip, _, _, name )
-    ip = string.Explode( ":", ip )[1]
-    local steamid = util.SteamIDFrom64( steamid64 )
+    connections[steamid64] = connections[steamid64] or 0
+    connections[steamid64] = connections[steamid64] + 1
 
-    connections[ip] = connections[ip] or 0
-    connections[ip] = connections[ip] + 1
-
-    if connections[ip] >= 8 then
+    if connections[steamid64] >= 8 then
+        ip = string.Explode( ":", ip )[1]
         RunConsoleCommand( "addip", banDuration, ip )
         RunConsoleCommand( "writeip" )
 
+        local steamid = util.SteamIDFrom64( steamid64 )
         print( "GMS Anti join spam: ", name .. " " .. steamid .. " tried to spam join the server." )
 
         return false, "Too many connection attempts"
@@ -19,12 +18,12 @@ hook.Add( "CheckPassword", "GMS_AntiJoinSpam", function( steamid64, ip, _, _, na
 end )
 
 timer.Create( "GMS_AntiJoinSpam", 5, 0, function()
-    for ip, count in pairs( connections ) do
+    for steamid64, count in pairs( connections ) do
         local newval = math.max( count - 1, 0 )
         if newval == 0 then
-            connections[ip] = nil
+            connections[steamid64] = nil
         else
-            connections[ip] = newval
+            connections[steamid64] = newval
         end
     end
 end )
