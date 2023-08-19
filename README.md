@@ -59,6 +59,13 @@ Removes the annoying LFS spawn in message
 
 <br>
 
+## `anti_joinspam`
+
+### Description
+Prevents players from spam rejoining the server to spam chat messages.
+
+<br>
+
 # Development
 **Halt!**
 Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
