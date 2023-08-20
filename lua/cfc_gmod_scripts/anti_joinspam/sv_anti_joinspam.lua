@@ -2,8 +2,7 @@ local connections = {}
 local banDuration = 3
 
 hook.Add( "CheckPassword", "GMS_AntiJoinSpam", function( steamid64, ip, _, _, name )
-    connections[steamid64] = connections[steamid64] or 0
-    connections[steamid64] = connections[steamid64] + 1
+    connections[steamid64] = ( connections[steamid64] or 0 ) + 1
 
     if connections[steamid64] >= 8 then
         ip = string.Explode( ":", ip )[1]
