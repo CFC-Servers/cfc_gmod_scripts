@@ -31,13 +31,6 @@ Fixes a weird Garry's Mod exploit that happens if a player issues an absurd amou
 
 <br>
 
-## `l4d2_vehicles_fix`
-
-### Description
-Fixes a silly (but absurdly spammy) `nil` error that occurrs in a popular L4D2 SimfPhys Vehicle Pack (this fix has already been proposed upstream, but the author doesn't appear to want to implement it)
-
-<br>
-
 ## `net_remover`
 
 ### Description
@@ -49,6 +42,32 @@ Removes certain net messages that are never used or useless for our usecase.
 
 ### Description
 Disables annoying bloom for maps that use bloom.
+
+<br>
+
+## `effects_whitelist`
+
+### Description
+Limits the effects that players can spawn to a pre-defined whitelist.
+
+This affects:
+- Manually spawning effects
+- Spawning effects with E2's Effect Core
+- Spawning effects with Starfall's Effect library
+
+More effects can be whitelisted by adding them to the global `GmodScripts_EffectWhitelist` table.
+```lua
+hook.Add( "InitPostEntity", "example", function()
+    GmodScripts_EffectWhitelist["my_effect"] = true
+end )
+```
+
+<br>
+
+## `l4d2_vehicles_fix`
+
+### Description
+Fixes a silly (but absurdly spammy) `nil` error that occurrs in a popular L4D2 SimfPhys Vehicle Pack (this fix has already been proposed upstream, but the author doesn't appear to want to implement it)
 
 <br>
 
