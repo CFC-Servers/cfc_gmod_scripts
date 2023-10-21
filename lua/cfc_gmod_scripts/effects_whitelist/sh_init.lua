@@ -22,12 +22,6 @@ hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( nam
     return deny( ply, name )
 end )
 
-hook.Add( "PlayerSpawnEffect", "CFC_GmodScripts_EffectWhitelist", function( ply, name )
-    if allowed[name] then return end
-
-    return deny( ply, name )
-end )
-
 GmodScripts_EffectWhitelist = {
     sparks = true,
     explosion = true,
