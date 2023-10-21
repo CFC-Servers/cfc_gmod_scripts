@@ -53,6 +53,7 @@ GmodScripts_EffectWhitelist = {
     airboatmuzzleflash = true,
 
     lfs_exhaust = true,
+    lfs_missile_explosion = true,
     acf_explosion = true,
     simfphys_engine_smoke = true,
 }
