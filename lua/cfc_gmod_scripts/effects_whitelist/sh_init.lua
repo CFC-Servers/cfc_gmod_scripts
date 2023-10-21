@@ -54,6 +54,7 @@ GmodScripts_EffectWhitelist = {
 
     lfs_exhaust = true,
     lfs_missile_explosion = true,
+    lfs_explosion_nodebris = true,
     acf_explosion = true,
     simfphys_engine_smoke = true,
 }
