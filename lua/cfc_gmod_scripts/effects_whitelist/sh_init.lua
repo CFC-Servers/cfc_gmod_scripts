@@ -15,10 +15,10 @@ hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( 
     return deny( ply, name )
 end )
 
-hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, chip )
+hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, instance )
     if allowed[name] then return end
 
-    local ply = chip.owner
+    local ply = instance.player
     return deny( ply, name )
 end )
 
