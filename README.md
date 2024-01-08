@@ -31,6 +31,13 @@ Fixes a weird Garry's Mod exploit that happens if a player issues an absurd amou
 
 <br>
 
+## `player_spawn_under`
+
+### Description
+Puts the player outside of the world when they first spawn, hopefully reducing their initial network strain while their game finishes loading.
+
+<br>
+
 ## `net_remover`
 
 ### Description
