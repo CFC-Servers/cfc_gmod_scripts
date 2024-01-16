@@ -12,6 +12,8 @@ hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( 
     if allowed[name] then return end
 
     local ply = chip.player
+    if ply:IsAdmin() then return end
+
     return deny( ply, name )
 end )
 
@@ -19,6 +21,8 @@ hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( nam
     if allowed[name] then return end
 
     local ply = instance.player
+    if ply:IsAdmin() then return end
+
     return deny( ply, name )
 end )
 
