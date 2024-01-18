@@ -1,6 +1,20 @@
 # cfc_gmod_scripts
 A disgusting pile of loose-knit, à la carte scripts for Garry's Mod
 
+# Development
+**Halt!**
+Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
+Loose-knit script repos like this are in danger of turning into a unmaintainable dumping ground. Please do your best to keep it clean and reasonable.
+
+
+⚠️ The project structure and these rules are subject to change as we add more scripts.
+
+All scripts should follow these rules:
+ - Be contained to a single directory under `lua/cfc_gmod_scripts/`
+ - Have an `init.lua` at the root of their directory
+ - Have a section in this README under the [Included Scripts](#included-scripts) category
+ - Ideally, have a convar to enable/disable them
+
 # Included Scripts:
 
 ## `bigchat_restrictor`
@@ -31,10 +45,13 @@ Fixes a weird Garry's Mod exploit that happens if a player issues an absurd amou
 
 <br>
 
-## `player_spawn_under`
+## `player_spawn_underground`
 
 ### Description
 Puts the player outside of the world when they first spawn, hopefully reducing their initial network strain while their game finishes loading.
+
+### Convar
+**`cfc_gmodscripts_enable_spawn_underground`**
 
 <br>
 
@@ -92,16 +109,3 @@ Prevents players from spam rejoining the server to spam chat messages.
 
 <br>
 
-# Development
-**Halt!**
-Are you **100% sure** your idea doesn't fit better in its own repo, or perhaps another one of our addons?
-Loose-knit script repos like this are in danger of turning into a unmaintainable dumping ground. Please do your best to keep it clean and reasonable.
-
-
-⚠️ The project structure and these rules are subject to change as we add more scripts.
-
-All scripts should follow these rules:
- - Be contained to a single directory under `lua/cfc_gmod_scripts/`
- - Have an `init.lua` at the root of their directory
- - Have a section in this README under the [Included Scripts](#included-scripts) category
- - Ideally, have a convar to enable/disable them
