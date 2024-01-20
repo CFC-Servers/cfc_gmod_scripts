@@ -1,6 +1,7 @@
 require( "playerload" )
 
 local enable = CreateConVar( "cfc_gmodscripts_spawnin_lag_fixer", "1", FCVAR_ARCHIVE, "Spawn players underground to combat lag" )
+local transmitRate = CreateConVar( "cfc_gmodscripts_spawnin_lag_fixer_transmit_rate", "5", FCVAR_ARCHIVE, "How many entities to transmit per tick" )
 
 local table_remove = table.remove
 local table_insert = table.insert
@@ -13,21 +14,21 @@ local queues = {}
 --- Player queues that need to be processed when they fully load
 local pending = {}
 --- Entities that were spawned by players
-local trackedEnts = {}
+local trackedEnts = ents.GetAll()
 
 -- Main queue processing loop. Processes N items from each queue
 hook.Add( "Think", "SpawnInLagFixer", function()
+    if not enable:GetBool() then return end
     local queueCount = #queues
 
     for q = 1, queueCount do
-        local struct = pending[q]
+        local struct = queues[q]
 
         local ply = struct[1]
-        local queue = struct[2]
+        local plyQueue = struct[2]
 
-        -- Process 10 items from each player's queue
-        for i = 1, 10 do
-            local ent = table_remove( queue )
+        for i = 1, transmitRate:GetInt() do
+            local ent = table_remove( plyQueue )
             if not ent then break end
 
             if Entity_IsValid( ent ) then
