@@ -71,8 +71,7 @@ GmodScripts_EffectWhitelist = {
     acf_heat_explosion = true,
     simfphys_engine_smoke = true,
     eff_jack_plasmaarc = true,
-
-    balloon_pop = true,
+    
     entity_remove = true,
     inflator_magic = true,
     LaserTracer = true,
