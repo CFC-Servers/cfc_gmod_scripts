@@ -6,7 +6,7 @@ local hookRanks = {
     director = true
 }
 
-hook.Add( "CFC_SpawnMenuWhitelist_ShouldBlockTabs", "CFC_GmodScripts_RankWhitelist", function( ply )
+hook.Add( "CFC_RemoveTabs_ShouldBlockNPCs", "CFC_GmodScripts_RankWhitelist", function( ply )
     if hookRanks[ply:GetUserGroup()] then
         return false
     end
