@@ -48,7 +48,7 @@ hook.Add( "HUDPaint", "SimpleArmorDisplay", function()
     local armor = visEnt:Armor()
     local statsText = visEnt:Health() .. "%"
 
-    if armor >= 1 then
+    if armor and armor >= 1 then
         statsText = statsText .. "  " .. armor .. "%"
     end
 
