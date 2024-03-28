@@ -20,12 +20,12 @@ end )
 hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, instance )
     if allowed[name] then return end
 
-    local owner = instance.owner
-    if owner:IsAdmin() then return end
+    local ply = instance.player
+    if ply:IsAdmin() then return end
 
     -- Only send the error message to the Starfall owner
-    if instance.player == owner then
-        return deny( owner, name )
+    if ply == LocalPlayer() then
+        return deny( ply, name )
     end
 
     return false
