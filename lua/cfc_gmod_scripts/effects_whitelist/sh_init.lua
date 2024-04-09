@@ -23,7 +23,12 @@ hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( nam
     local ply = instance.player
     if ply:IsAdmin() then return end
 
-    return deny( ply, name )
+    -- Only send the error message to the Starfall owner
+    if ply == LocalPlayer() then
+        return deny( ply, name )
+    end
+
+    return false
 end )
 
 GmodScripts_EffectWhitelist = {
