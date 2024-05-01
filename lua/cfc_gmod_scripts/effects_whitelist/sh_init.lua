@@ -24,7 +24,7 @@ hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( nam
     if ply:IsAdmin() then return end
 
     -- Only send the error message to the Starfall owner
-    if ply == LocalPlayer() then
+    if SERVER or ( CLIENT and ply == LocalPlayer() ) then
         return deny( ply, name )
     end
 
