@@ -6,6 +6,7 @@ local ranks = {
 }
 
 hook.Add( "PlayerCanSeePlayersChat", "GmodScripts_PublicTeamChat", function( _text, team, _listener, speaker )
+    if not IsValid( speaker ) then return end
     local usergroup = speaker:GetUserGroup()
     if not ranks[usergroup] then return end
     if team then return true end
