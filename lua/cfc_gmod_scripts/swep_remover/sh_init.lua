@@ -1,3 +1,5 @@
+local enabled = GmodScripts.MakeToggle( "remove_sweps", "Remove specific SWEPs", true )
+
 local swepsToRemove = {
     m9k_mmm_flaregun = true, -- Does firedamage, fire damage is disabled. just minges builders.
     weapon_ak47_admin = true, -- Shouldn't be used, admin weapon that does thousands of damage, gives max health and a ton of speed.
@@ -6,5 +8,7 @@ local swepsToRemove = {
 }
 
 hook.Add( "PreRegisterSWEP", "CFC_GmodScripts_RemoveSweps", function( _, class )
+    if not enabled:GetBool() then return end
+
     if swepsToRemove[class] then return false end
 end )

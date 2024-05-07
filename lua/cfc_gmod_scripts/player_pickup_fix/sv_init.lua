@@ -1,3 +1,5 @@
+local enabled = GmodScripts.MakeToggle( "player_pickup_fix", "Fix player_pickup exploit" )
+
 local function validatePlayerPickup( e )
     if not e:IsValid() then return end
 
@@ -20,6 +22,8 @@ local function validatePlayerPickup( e )
 end
 
 hook.Add( "OnEntityCreated", "test", function( e )
+    if not enabled:GetBool() then return end
+
     if e:GetClass() ~= "player_pickup" then return end
     timer.Simple( 0, function() validatePlayerPickup( e ) end )
 end )

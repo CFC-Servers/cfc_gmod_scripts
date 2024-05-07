@@ -1,4 +1,4 @@
--- https://steamcommunity.com/sharedfiles/filedetails/?id=2841350210
+-- Replicates: https://steamcommunity.com/sharedfiles/filedetails/?id=2841350210
 
 local LocalPlayer = LocalPlayer
 local surface_SetFont = surface.SetFont
