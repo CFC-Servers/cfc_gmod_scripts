@@ -1,8 +1,10 @@
+-- https://steamcommunity.com/workshop/filedetails/?id=707343339
 local className = "cw_extrema_ratio_official"
 
 hook.Add( "InitPostEntity", "CFC_GmodScripts_Load", function()
     local weapon = weapons.Get( className )
     if not weapon then return end
+
     local drawClumpSpread = weapon.drawClumpSpread
     local stored = weapons.GetStored( className )
 

@@ -1,12 +1,36 @@
 AddCSLuaFile()
 
+GmodScripts = {}
 local topLevel = "cfc_gmod_scripts"
+local convarPrefix = "cfc_gmodscripts_"
 
 local SERVER = SERVER
 local CLIENT = CLIENT
 
-local function log( name )
-    print( "[CFC Gmod Scripts] Loading: ", name )
+--- Logs a prefixed message to the console
+--- @vararg any
+function GmodScripts.Log( ... )
+    print( "[CFC Gmod Scripts]", ... )
+end
+
+--- Creates a convar to toggle functionality
+--- @param name string
+--- @param description string
+--- @param replicated? boolean (Default: false)
+--- @return ConVar
+function GmodScripts.MakeToggle( name, description, replicated )
+    name = convarPrefix .. name
+
+    local flags = FCVAR_ARCHIVE
+    if replicated then flags = flags + FCVAR_REPLICATED end
+
+    return CreateConVar( name, "1", flags, description )
+end
+
+--- Logs the loading of a module
+--- @param name string
+local function logModuleLoad( name )
+    GmodScripts.Log( "Loading: ", name )
 end
 
 -- ChatGPT says this is the best way to do this
@@ -48,10 +72,10 @@ for _, dir in ipairs( dirs ) do
     end
 
     if CLIENT and isClient then
-        log( dir )
+        logModuleLoad( dir )
     end
 
     if SERVER and isServer then
-        log( dir )
+        logModuleLoad( dir )
     end
 end

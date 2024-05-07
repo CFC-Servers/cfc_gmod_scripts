@@ -1,4 +1,5 @@
 local allowed
+local enabled = GmodScripts.MakeToggle( "effect_whitelist", "Enable the effect whitelist" )
 
 local function deny( ply, name )
     if ply:IsValid() then
@@ -9,6 +10,7 @@ local function deny( ply, name )
 end
 
 hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, chip )
+    if not enabled:GetBool() then return end
     if allowed[name] then return end
 
     local ply = chip.player
@@ -18,6 +20,7 @@ hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( 
 end )
 
 hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, instance )
+    if not enabled:GetBool() then return end
     if allowed[name] then return end
 
     local ply = instance.player
@@ -31,7 +34,7 @@ hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( nam
     return false
 end )
 
-GmodScripts_EffectWhitelist = {
+GmodScripts.EffectWhitelist = {
     sparks = true,
     explosion = true,
     ar2impact = true,
@@ -81,4 +84,4 @@ GmodScripts_EffectWhitelist = {
     selection_ring = true,
     wheel_indicator = true,
 }
-allowed = GmodScripts_EffectWhitelist
+allowed = GmodScripts.EffectWhitelist

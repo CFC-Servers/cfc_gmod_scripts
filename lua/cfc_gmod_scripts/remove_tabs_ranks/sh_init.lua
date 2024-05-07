@@ -1,4 +1,5 @@
-local enabled = CreateConVar( "cfc_gmodscripts_enable_removetabs", "1", FCVAR_ARCHIVE + FCVAR_REPLICATED, "Enable the RemoveTabs module.", 0, 1 )
+-- Interfaces with: https://github.com/CFC-Servers/cfc_remove_tabs
+local enabled = GmodScripts.MakeToggle( "rank_restrict_removetabs", "Disable CFC_RemoveTabs functionality for specific ranks" )
 
 if CLIENT then
     local hookRanks = {

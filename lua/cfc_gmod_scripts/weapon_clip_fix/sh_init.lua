@@ -1,4 +1,8 @@
+local enabled = GmodScripts.MakeToggle( "weapon_clip_fix", "Block proper clipping on weapon models", true )
+
 hook.Add( "CanTool", "CFC_GmodScripts_WeaponClipFix", function( _, tr, toolName )
+    if not enabled:GetBool() then return end
+
     if toolName ~= "proper_clipping" then return end
     if not tr.Hit then return end
 
