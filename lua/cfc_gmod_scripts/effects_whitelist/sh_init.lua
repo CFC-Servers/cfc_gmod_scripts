@@ -71,5 +71,14 @@ GmodScripts_EffectWhitelist = {
     acf_heat_explosion = true,
     simfphys_engine_smoke = true,
     eff_jack_plasmaarc = true,
+    entity_remove = true,
+    inflator_magic = true,
+    LaserTracer = true,
+    phys_freeze = true,
+    phys_unfreeze = true,
+    propspawn = true,
+    selection_indicator = true,
+    selection_ring = true,
+    wheel_indicator = true,
 }
 allowed = GmodScripts_EffectWhitelist
