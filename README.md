@@ -87,6 +87,15 @@ Fixes a weird Garry's Mod exploit that happens if a player issues an absurd amou
 <br>
 
 
+## `projectedtexture`
+
+### Description
+`env_projectedtexture` entities with the `enableshadow` property enabled _(as in wire lights and lamps)_ appear to cause a huge amount of clientside lag when they face other props _(and cast shadows)_
+This disables the `enableshadow` property on all newly created `env_projectedtexture` entities.
+
+<br>
+
+
 ## `remove_tabs_ranks`
 
 ### Description
