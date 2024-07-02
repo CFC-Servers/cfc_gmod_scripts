@@ -2,14 +2,17 @@ local connections = {}
 local banDuration = 3
 
 hook.Add( "CheckPassword", "GMS_AntiJoinSpam", function( steamid64, ip, _, _, name )
+    ip = string.Explode( ":", ip )[1]
+
     connections[steamid64] = ( connections[steamid64] or 0 ) + 1
+    connections[ip] = ( connections[ip] or 0 ) + 1
 
     timer.Create( "GMS_ConnectCooldown_" .. steamid64, 5, 1, function()
         connections[steamid64] = nil
+        connections[ip] = nil
     end )
 
-    if connections[steamid64] >= 5 then
-        ip = string.Explode( ":", ip )[1]
+    if connections[steamid64] >= 4 or connections[ip] >= 4 then
         RunConsoleCommand( "addip", banDuration, ip )
         RunConsoleCommand( "writeip" )
 
