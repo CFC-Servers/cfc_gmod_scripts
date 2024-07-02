@@ -4,7 +4,7 @@ local banDuration = 3
 hook.Add( "CheckPassword", "GMS_AntiJoinSpam", function( steamid64, ip, _, _, name )
     connections[steamid64] = ( connections[steamid64] or 0 ) + 1
 
-    timer.Create( "GMS_ConnectCooldown_" .. steamid64, 10, 1, function()
+    timer.Create( "GMS_ConnectCooldown_" .. steamid64, 5, 1, function()
         connections[steamid64] = nil
     end )
 
