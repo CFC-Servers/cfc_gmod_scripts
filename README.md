@@ -196,6 +196,12 @@ Replicates the [Simple Armor Display](https://steamcommunity.com/sharedfiles/fil
 
 <br>
 
+## `uncache_crash_fix`
+
+### Description
+- **Client**
+Forces clients to use the new `gmod_uncache_test` convar at a value of `1`, which should reduce crashes
+
 
 ## `vertex_fix`
 
