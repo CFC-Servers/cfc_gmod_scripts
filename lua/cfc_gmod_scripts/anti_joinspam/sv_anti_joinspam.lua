@@ -1,7 +1,10 @@
 local connections = {}
 local banDuration = 3
 
+local enabled = GmodScripts.MakeToggle( "anti_joinspam", "Anti Join Spam functionality" )
+
 hook.Add( "CheckPassword", "GMS_AntiJoinSpam", function( steamid64, ip, _, _, name )
+    if not enabled:GetBool() then return end
     ip = string.Explode( ":", ip )[1]
 
     connections[steamid64] = ( connections[steamid64] or 0 ) + 1
