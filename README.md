@@ -224,3 +224,16 @@ Fixes a bug where using Proper Clipping on a dropped weapon would crash the serv
 <br>
 
 
+## `wire_entspawn_alert`
+
+### Description
+- **Server**
+Prints ULX-like logs when a player spawns a Wiremod entity (either with the toolgun or AdvDupe2)
+
+
+### Config
+- `cfc_gmodscripts_wire_entspawn_alert`
+
+<br>
+
+
