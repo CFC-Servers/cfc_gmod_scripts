@@ -1,3 +1,3 @@
-hook.Add( "WeaponEquip", "RemoveWeaponConstraints", function( wep, ply ) -- Crash fix
+hook.Add( "WeaponEquip", "RemoveWeaponConstraints", function( wep ) -- Crash fix
     constraint.RemoveAll( wep )
 end )
