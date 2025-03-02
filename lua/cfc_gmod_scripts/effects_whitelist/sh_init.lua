@@ -83,5 +83,6 @@ GmodScripts.EffectWhitelist = {
     selection_indicator = true,
     selection_ring = true,
     wheel_indicator = true,
+    HL1GaussWallImpact2 = true,
 }
 allowed = GmodScripts.EffectWhitelist
