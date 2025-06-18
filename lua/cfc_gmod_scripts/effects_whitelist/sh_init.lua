@@ -49,6 +49,7 @@ GmodScripts.EffectWhitelist = {
     impactgauss = true,
     thumperdust = true,
     waterripple = true,
+    gausstracer = true,
     bloodimpact = true,
     rpgshotdown = true,
     watersplash = true,
