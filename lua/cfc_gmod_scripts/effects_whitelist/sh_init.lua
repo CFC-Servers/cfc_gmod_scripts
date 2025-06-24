@@ -85,5 +85,6 @@ GmodScripts.EffectWhitelist = {
     selection_ring = true,
     wheel_indicator = true,
     HL1GaussWallImpact2 = true,
+    glide_explosion = true
 }
 allowed = GmodScripts.EffectWhitelist
