@@ -85,6 +85,24 @@ GmodScripts.EffectWhitelist = {
     selection_ring = true,
     wheel_indicator = true,
     HL1GaussWallImpact2 = true,
-    glide_explosion = true
+
+    glide_explosion = true,
+    glide_afterburner_flame = true,
+    glide_afterburner = true,
+    glide_boat_foam = true,
+    glide_boat_propeller = true,
+    glide_boat_splash = true,
+    glide_damaged_engine = true,
+    glide_damaged_exhaust = true,
+    glide_exhaust = true,
+    glide_fire = true,
+    glide_flare = true,
+    glide_metal_impact = true,
+    glide_missile = true,
+    glide_projectile = true,
+    glide_tank_cannon = true,
+    glide_tire_roll = true,
+    glide_tire_slip_forward = true,
+    glide_tracer = true,
 }
 allowed = GmodScripts.EffectWhitelist
