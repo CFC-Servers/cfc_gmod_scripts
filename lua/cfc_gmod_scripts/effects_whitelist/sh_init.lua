@@ -106,6 +106,6 @@ GmodScripts.EffectWhitelist = {
     glide_tracer = true,
 
     glide_firework = true,
-    glide_explosion_firework = true,
+    glide_firework_explosion = true,
 }
 allowed = GmodScripts.EffectWhitelist
