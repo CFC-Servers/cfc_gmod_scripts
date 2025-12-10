@@ -104,5 +104,8 @@ GmodScripts.EffectWhitelist = {
     glide_tire_roll = true,
     glide_tire_slip_forward = true,
     glide_tracer = true,
+
+    glide_firework = true,
+    glide_firework_explosion = true,
 }
 allowed = GmodScripts.EffectWhitelist
