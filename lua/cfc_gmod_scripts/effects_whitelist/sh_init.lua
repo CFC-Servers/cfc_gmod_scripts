@@ -1,22 +1,22 @@
 local allowed
 local enabled = GmodScripts.MakeToggle( "effect_whitelist", "Enable the effect whitelist" )
 
-local function deny( ply, name )
-    if ply:IsValid() then
+local function deny( ply, name, isPlay )
+    if isPlay and ply:IsValid() then
         ply:ChatPrint( "The effect '" .. name .. "' is not whitelisted and cannot be used" )
     end
 
     return false
 end
 
-hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, chip )
+hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, chip, isPlay )
     if not enabled:GetBool() then return end
     if allowed[name] then return end
 
     local ply = chip.player
     if ply:IsAdmin() then return end
 
-    return deny( ply, name )
+    return deny( ply, name, isPlay )
 end )
 
 hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, instance )
@@ -28,7 +28,7 @@ hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( nam
 
     -- Only send the error message to the Starfall owner
     if SERVER or ( CLIENT and ply == LocalPlayer() ) then
-        return deny( ply, name )
+        return deny( ply, name, true )
     end
 
     return false
