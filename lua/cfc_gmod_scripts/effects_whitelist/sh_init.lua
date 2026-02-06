@@ -11,6 +11,8 @@ end
 
 hook.Add( "Expression2_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, chip, isPlay )
     if not enabled:GetBool() then return end
+
+    name = string.lower( name )
     if allowed[name] then return end
 
     local ply = chip.player
@@ -21,6 +23,9 @@ end )
 
 hook.Add( "Starfall_CanEffect", "CFC_GmodScripts_EffectWhitelist", function( name, instance )
     if not enabled:GetBool() then return end
+
+    -- dont have to lower name, starfall lowers it already
+    -- https://github.com/thegrb93/StarfallEx/blob/4d7dd11d54d298665ced8bf72903ab8a72628865/lua/starfall/libs_sh/effect.lua#L108
     if allowed[name] then return end
 
     local ply = instance.player
@@ -77,14 +82,14 @@ GmodScripts.EffectWhitelist = {
     eff_jack_plasmaarc = true,
     entity_remove = true,
     inflator_magic = true,
-    LaserTracer = true,
+    lasertracer = true,
     phys_freeze = true,
     phys_unfreeze = true,
     propspawn = true,
     selection_indicator = true,
     selection_ring = true,
     wheel_indicator = true,
-    HL1GaussWallImpact2 = true,
+    hl1gausswallimpact2 = true,
 
     glide_explosion = true,
     glide_afterburner_flame = true,
