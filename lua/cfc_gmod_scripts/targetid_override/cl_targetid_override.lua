@@ -15,11 +15,21 @@ local statsFont = "TargetIDSmall"
 local color1 = Color( 0, 0, 0, 120 )
 local color2 = Color( 0, 0, 0, 50 )
 
+local cvar = CreateClientConVar(
+    "cfc_targetid",
+    "1",
+    true,
+    false,
+    "Display health and armor when you look at a player."
+)
+
 hook.Add( "HUDDrawTargetID", "SimpleArmorDisplay", function()
     return false
 end )
 
 hook.Add( "HUDPaint", "SimpleArmorDisplay", function()
+    if not cvar:GetBool() then return end
+
     local visEnt = LocalPlayer():GetEyeTrace().Entity
 
     if not IsValid( visEnt ) then return end
